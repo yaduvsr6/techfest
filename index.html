@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGNITE V7 | Annual Techno-Cultural Festival | Mahaguru Institute of Technology</title>
+  <meta name="description" content="IGNITE V7 — The annual techno-cultural festival of Mahaguru Institute of Technology (MIT). Ignite the Future. Unleash the Energy. ProShows, Auto Expo, Tech Workshops, Sports Arena, and Cultural Extravaganza.">
+  <meta name="theme-color" content="#0a0a0c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff5722'%3E%3Cpath d='M12 23c-4.97 0-9-4.03-9-9 0-4.06 2.88-7.94 5.5-10.42.54-.51 1.4-.14 1.43.61.1 2.37 1.4 4.3 3.57 5.17.68.27 1.35-.34 1.25-1.07-.36-2.58.55-5.26 2.39-7.07.6-.59 1.62-.2 1.68.64.28 3.86 2.31 6.55 3.18 8.14C21.08 11.96 21 13.97 21 14c0 4.97-4.03 9-9 9z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Always-running Background Video of DJ ProShow -->
+  <div class="video-bg-container" id="videoBgContainer">
+    <video id="bgDjVideo" autoplay loop muted playsinline preload="auto">
+      <source src="https://archive.org/download/RaveDownloads/BBC%20-%20DJs%20On%20Tour%20Steve%20Aoki%20-%20001%20-%201280x720%20-%20325438767.mp4" type="video/mp4">
+      <source src="https://archive.org/download/RaveDownloads/BBC%20-%20DJs%20On%20Tour%20Major%20Lazer%20-%20001%20-%201280x720%20-%20313655647.mp4" type="video/mp4">
+    </video>
+    <div class="video-bg-overlay"></div>
+  </div>
+
+  <!-- Ambient Audio & Background Video Controls Widget -->
+  <div class="media-toggle-widgets" id="mediaToggleWidgets">
+    <button class="audio-btn" id="soundBtn" aria-label="Toggle Festival Sound Atmosphere">
+      <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
+      <span class="audio-text">Audio FX</span>
+    </button>
+    <button class="video-toggle-btn" id="videoToggleBtn" aria-label="Toggle Background DJ Video">
+      <i class="fa-solid fa-video" id="videoIcon"></i>
+      <span class="video-text">DJ Video: ON</span>
+    </button>
+  </div>
+
+  <!-- Background Animated Canvas (Sparks, Ember & Cyber Grid) -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Glowing Laser Beams & Smoke Effect Layers -->
+  <div class="laser-beam laser-left"></div>
+  <div class="laser-beam laser-right"></div>
+  <div class="smoke-overlay"></div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="IGNITE V7 Home">
+        <div class="logo-symbol">
+          <span class="flame-core"></span>
+          <i class="fa-solid fa-fire-flame-curved"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">IGNITE <span class="v-accent">V7</span></span>
+          <span class="logo-sub">MIT CAMPUS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#events" class="nav-link">All Events</a></li>
+          <li><a href="#proshow" class="nav-link highlight-link">ProShow</a></li>
+          <li><a href="#autoexpo" class="nav-link">Auto Expo</a></li>
+          <li><a href="#techzone" class="nav-link">Tech Zone</a></li>
+          <li><a href="#cultural" class="nav-link">Cultural</a></li>
+          <li><a href="#sports" class="nav-link">Sports Arena</a></li>
+          <li><a href="#schedule" class="nav-link">Schedule</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Venue</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#registration" class="btn btn-primary btn-sm glow-btn">
+          <i class="fa-solid fa-ticket"></i>
+          <span>Register Now</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDEBAR OVERLAY -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">IGNITE <span class="v-accent">V7</span></span>
+          <span class="logo-sub">MAHAGURU INSTITUTE OF TECH</span>
+        </div>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close Navigation">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#about" class="mobile-link"><i class="fa-solid fa-circle-info"></i> About Fest</a></li>
+      <li><a href="#events" class="mobile-link"><i class="fa-solid fa-calendar-days"></i> All Events</a></li>
+      <li><a href="#proshow" class="mobile-link"><i class="fa-solid fa-star"></i> ProShow & Pro Night</a></li>
+      <li><a href="#autoexpo" class="mobile-link"><i class="fa-solid fa-car-burst"></i> Auto Expo</a></li>
+      <li><a href="#techzone" class="mobile-link"><i class="fa-solid fa-microchip"></i> Tech Workshops & Lectures</a></li>
+      <li><a href="#cultural" class="mobile-link"><i class="fa-solid fa-masks-theater"></i> Cultural, Dance & Fashion</a></li>
+      <li><a href="#sports" class="mobile-link"><i class="fa-solid fa-trophy"></i> Ignite Sports Arena</a></li>
+      <li><a href="#schedule" class="mobile-link"><i class="fa-solid fa-timeline"></i> Event Timetable</a></li>
+      <li><a href="#gallery" class="mobile-link"><i class="fa-solid fa-images"></i> Festival Gallery</a></li>
+      <li><a href="#sponsors" class="mobile-link"><i class="fa-solid fa-handshake"></i> Partners & Sponsors</a></li>
+      <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-location-dot"></i> Venue & Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="#registration" class="btn btn-primary btn-block glow-btn">
+        <i class="fa-solid fa-ticket"></i> Get Festival Pass
+      </a>
+      <p class="drawer-tagline">“One Campus. Infinite Energy.”</p>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-atmosphere">
+        <div class="cyber-grid"></div>
+        <div class="radial-flare"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-college-badge animate-fade-down">
+          <span class="badge-pulse"></span>
+          <span class="college-name">MAHAGURU INSTITUTE OF TECHNOLOGY (MIT) PRESENTS</span>
+        </div>
+
+        <div class="hero-title-container">
+          <div class="hero-glitch-wrapper">
+            <h1 class="hero-main-title" data-text="IGNITE V7">
+              <span class="chrome-letter">I</span><span class="chrome-letter">G</span><span class="chrome-letter">N</span><span class="chrome-letter">I</span><span class="chrome-letter">T</span><span class="chrome-letter">E</span>
+              <span class="hero-version">V7</span>
+            </h1>
+          </div>
+          <div class="hero-energy-line">
+            <span class="energy-glow"></span>
+          </div>
+        </div>
+
+        <p class="hero-tagline">
+          “Ignite the Future. Unleash the Energy.”
+        </p>
+
+        <p class="hero-description">
+          The ultimate convergence of cutting-edge technology, roaring engines, high-voltage concerts, haute couture, explosive street dance, and championship athletics. 
+        </p>
+
+        <!-- Dynamic Countdown Timer -->
+        <div class="hero-countdown-wrapper">
+          <div class="countdown-label">FESTIVAL COUNTDOWN STARTS IN:</div>
+          <div class="countdown-timer" id="countdownTimer">
+            <div class="countdown-unit">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-title">DAYS</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-title">HOURS</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-title">MINUTES</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-title">SECONDS</span>
+            </div>
+          </div>
+          <!-- Configuration note -->
+          <div class="countdown-date-badge">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span id="targetDateDisplay">MARCH 20 - 22, 2027 | MIT MAIN CAMPUS</span>
+          </div>
+        <!-- Official Ticket Highlights -->
+        <div class="hero-ticket-pricing-pill">
+          <span class="price-chip"><i class="fa-solid fa-car-burst text-neon-orange"></i> Auto Expo Entry: <strong>₹100</strong></span>
+          <span class="price-chip-sep">•</span>
+          <span class="price-chip highlight-chip"><i class="fa-solid fa-fire text-neon-orange"></i> Pro Night Concert Pass: <strong>₹599</strong></span>
+          <span class="price-chip-sep">•</span>
+          <span class="price-chip"><i class="fa-solid fa-shield text-neon-cyan"></i> Sports & Tech: <strong>₹6L+ Prizes</strong></span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#registration" class="btn btn-primary btn-lg glow-btn">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Register Now</span>
+          </a>
+          <a href="#events" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-compass"></i>
+            <span>Explore Events</span>
+          </a>
+          <button class="btn btn-ghost btn-lg" id="teaserModalBtn">
+            <i class="fa-solid fa-play"></i>
+            <span>Watch Teaser</span>
+          </button>
+        </div>
+
+        <!-- Metric Tickers -->
+        <div class="hero-stats-bar">
+          <div class="stat-item">
+            <span class="stat-number" data-target="45">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Events & Competitions</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="25">0</span><span class="stat-plus">K+</span>
+            <span class="stat-label">Expected Footfall</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-prefix">₹</span><span class="stat-number" data-target="6">0</span><span class="stat-plus">LAKHS+</span>
+            <span class="stat-label">Cash Prize Pool</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="120">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Colleges Competing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to content">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <span class="scroll-text">EXPLORE IGNITE</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-fire"></i> THE LEGACY OF EXCELLENCE</span>
+          <h2 class="section-title">One Campus. <span class="gradient-text">Infinite Energy.</span></h2>
+          <p class="section-subtitle">
+            Welcome to IGNITE V7 — Mahaguru Institute of Technology's premier annual techno-cultural carnival. Where futuristic ingenuity meets electrifying youth culture.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-visual-card">
+            <div class="visual-card-inner">
+              <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1000&q=80" alt="IGNITE Festival Crowd Atmosphere" class="about-main-img" loading="lazy">
+              <div class="visual-glass-overlay">
+                <div class="badge-fest-edition">
+                  <span class="edition-num">7th</span>
+                  <span class="edition-lbl">EDITION</span>
+                </div>
+                <div class="fest-motto">
+                  <h4>MAHAGURU INSTITUTE OF TECHNOLOGY</h4>
+                  <p>Innovate • Create • Dominate • Celebrate</p>
+                </div>
+              </div>
+            </div>
+            <div class="floating-badge badge-1">
+              <i class="fa-solid fa-bolt"></i> 3 Days of Pure Adrenaline
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fa-solid fa-trophy"></i> National Level Recognition
+            </div>
+          </div>
+
+          <div class="about-content-card">
+            <h3 class="about-story-title">A Symphony of Tech, Beats, Speed & Sweat</h3>
+            <p class="about-text">
+              Conceived as a platform to celebrate the unstoppable creativity of young minds, <strong>IGNITE</strong> has grown from an inter-college symposium into one of the state's largest techno-cultural spectacles. 
+            </p>
+            <p class="about-text">
+              In its seventh incarnation, <strong>IGNITE V7</strong> shatters boundaries. Whether you are engineering autonomous drones, revving custom supercars at the Auto Expo, conquering the mat in Kabaddi, walking the high-fashion runway, or singing under 50,000 watts of festival sound at our grand Pro Night — this stage belongs to you.
+            </p>
+
+            <div class="pillars-container">
+              <div class="pillar-box">
+                <div class="pillar-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="pillar-info">
+                  <h4>Technology & AI</h4>
+                  <p>Hands-on workshops, 24H hackathon, robotics, and visionary keynotes.</p>
+                </div>
+              </div>
+              <div class="pillar-box">
+                <div class="pillar-icon"><i class="fa-solid fa-car-side"></i></div>
+                <div class="pillar-info">
+                  <h4>Automotive Culture</h4>
+                  <p>Modified supercars, exotic bikes, tuning exhibits, and sound battles.</p>
+                </div>
+              </div>
+              <div class="pillar-box">
+                <div class="pillar-icon"><i class="fa-solid fa-guitar"></i></div>
+                <div class="pillar-info">
+                  <h4>Stage & ProShows</h4>
+                  <p>Headline celebrity artists, concert visuals, street dance, and fashion.</p>
+                </div>
+              </div>
+              <div class="pillar-box">
+                <div class="pillar-icon"><i class="fa-solid fa-volleyball"></i></div>
+                <div class="pillar-info">
+                  <h4>Sports Arena</h4>
+                  <p>Kabaddi, Football, County Cricket, Volleyball, and 3's Football.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-action">
+              <a href="#events" class="btn btn-primary glow-btn">
+                <span>Browse All 45+ Events</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Explore MIT Campus</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ALL EVENTS / INTERACTIVE FILTER SECTION -->
+    <section class="section events-section" id="events">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-trophy"></i> BATTLEGROUND OF TALENT</span>
+          <h2 class="section-title">Explore Festival <span class="gradient-text">Events & Competitions</span></h2>
+          <p class="section-subtitle">
+            Filter through our diverse categories, discover prize pools, schedule dates, and secure your registration.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="events-filter-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="eventSearchInput" placeholder="Search event, workshop or sport..." aria-label="Search events">
+          </div>
+
+          <div class="category-pills" id="categoryFilterGroup">
+            <button class="filter-pill active" data-filter="all">All Events</button>
+            <button class="filter-pill" data-filter="tech"><i class="fa-solid fa-microchip"></i> Technology</button>
+            <button class="filter-pill" data-filter="entertainment"><i class="fa-solid fa-star"></i> Entertainment</button>
+            <button class="filter-pill" data-filter="cultural"><i class="fa-solid fa-masks-theater"></i> Cultural & Dance</button>
+            <button class="filter-pill" data-filter="auto"><i class="fa-solid fa-car-burst"></i> Auto Expo</button>
+            <button class="filter-pill" data-filter="sports"><i class="fa-solid fa-medal"></i> Sports Arena</button>
+          </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid" id="eventsGridContainer">
+          <!-- Dynamic cards injected via JS, with static fallbacks for accessibility -->
+        </div>
+
+        <div class="events-footer-note text-center">
+          <p>Looking for custom college group registration or multi-event passes?</p>
+          <a href="#registration" class="btn btn-outline-glow btn-sm">
+            <i class="fa-solid fa-users-viewfinder"></i> Team & Group Registration Form
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROSHOW & PRO NIGHT FEATURE (CONCERT ATMOSPHERE) -->
+    <section class="section proshow-section" id="proshow">
+      <div class="proshow-bg-decor">
+        <div class="stage-spotlight-left"></div>
+        <div class="stage-spotlight-center"></div>
+        <div class="stage-spotlight-right"></div>
+      </div>
+
+      <div class="container">
+        <div class="proshow-hero-banner">
+          <div class="proshow-header text-center">
+            <div class="proshow-vip-badge">
+              <i class="fa-solid fa-crown"></i> PROSHOW & PRO NIGHT CONCERT PASS — ₹599
+            </div>
+            <h2 class="proshow-title">PROSHOW & <span class="gradient-text">PRO NIGHT</span></h2>
+            <p class="proshow-tagline">
+              50,000 Watts Line-Array Sound. Synchronized Laser Cannons. Massive Crowd Chorus. Headline DJs & Live Touring Bands. An Unforgettable Experience for Just <strong>₹599</strong>!
+            </p>
+            <div class="proshow-pass-perks">
+              <span><i class="fa-solid fa-circle-check text-green"></i> Includes Day 1, Day 2 & Day 3 Concerts</span>
+              <span><i class="fa-solid fa-circle-check text-green"></i> Front-Row Arena Pit Access</span>
+              <span><i class="fa-solid fa-circle-check text-green"></i> Synchronized LED RFID Wristband</span>
+            </div>
+          </div>
+
+          <!-- PROSHOW DEMO VIDEO PLAYER SECTION -->
+          <div class="proshow-demo-video-wrapper">
+            <div class="demo-video-header">
+              <div class="demo-title-group">
+                <span class="demo-tag"><i class="fa-solid fa-circle-play text-neon-orange"></i> LIVE STAGE DEMO & TEASER</span>
+                <h3>Watch the Headline DJ & Concert Energy in Action</h3>
+              </div>
+              <!-- Video Selector Buttons -->
+              <div class="demo-video-tabs" id="demoVideoTabs">
+                <button class="demo-tab-btn active" data-video-src="https://archive.org/download/RaveDownloads/BBC%20-%20DJs%20On%20Tour%20Steve%20Aoki%20-%20001%20-%201280x720%20-%20325438767.mp4" data-video-title="DJ Shaan & Headline Electronic Tour Set">
+                  <i class="fa-solid fa-bolt"></i> Headline DJ Live Set
+                </button>
+                <button class="demo-tab-btn" data-video-src="https://archive.org/download/RaveDownloads/BBC%20-%20DJs%20On%20Tour%20Major%20Lazer%20-%20001%20-%201280x720%20-%20313655647.mp4" data-video-title="50,000W Laser & Pyro Drop Simulation">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Laser & Pyro Demo
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Player Container -->
+            <div class="demo-player-box">
+              <div class="demo-video-viewport">
+                <video id="proshowDemoVideo" playsinline preload="metadata" poster="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80">
+                  <source src="https://archive.org/download/RaveDownloads/BBC%20-%20DJs%20On%20Tour%20Steve%20Aoki%20-%20001%20-%201280x720%20-%20325438767.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+                <div class="demo-video-overlay-tint"></div>
+                
+                <!-- Custom Overlay Controls -->
+                <div class="demo-player-overlay" id="demoPlayerOverlay">
+                  <button class="demo-play-btn" id="demoPlayBtn" aria-label="Play or Pause ProShow Demo Video">
+                    <i class="fa-solid fa-play" id="demoPlayIcon"></i>
+                  </button>
+                  <div class="demo-live-badge"><span class="live-dot"></span> 4K STAGE TEASER</div>
+                  <div class="demo-now-playing" id="demoNowPlaying">DJ SHAAN & LIVE ROCK ENSEMBLE — FESTIVAL DEMO</div>
+                </div>
+
+                <!-- Custom Scrubber / Controls Bar -->
+                <div class="demo-controls-bar">
+                  <button class="ctrl-btn" id="ctrlPlayPause"><i class="fa-solid fa-play"></i></button>
+                  <div class="ctrl-progress-wrap" id="ctrlProgressWrap">
+                    <div class="ctrl-progress-bar" id="ctrlProgressBar"></div>
+                  </div>
+                  <span class="ctrl-time" id="ctrlTime">00:00 / 03:30</span>
+                  <button class="ctrl-btn" id="ctrlMute"><i class="fa-solid fa-volume-high"></i></button>
+                  <button class="ctrl-btn" id="ctrlFullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+              </div>
+
+              <!-- Demo Tracklist & Booking Strip -->
+              <div class="demo-sidebar-details">
+                <div class="sidebar-headline">
+                  <span class="price-chip-lg">ENTRY: ₹599</span>
+                  <h4>Pro Night Stage Setlist & Perks</h4>
+                  <p>Catch explosive EDM drops, anthemic rock guitars, and 15,000+ student chorus on the MIT Festival Grounds.</p>
+                </div>
+                <div class="demo-tracklist">
+                  <div class="track-item">
+                    <span class="track-num">01</span>
+                    <div class="track-info">
+                      <strong>IGNITE V7 Anthem (Exclusive Live Drop)</strong>
+                      <span>DJ Shaan x MIT Orchestra • High-Tempo Electro</span>
+                    </div>
+                  </div>
+                  <div class="track-item">
+                    <span class="track-num">02</span>
+                    <div class="track-info">
+                      <strong>Mumbai to Tomorrowland (Festival Remix)</strong>
+                      <span>Lost Stories • Progressive Indian Folk Electronic</span>
+                    </div>
+                  </div>
+                  <div class="track-item">
+                    <span class="track-num">03</span>
+                    <div class="track-info">
+                      <strong>Titanium Rock Symphony & Laser Finale</strong>
+                      <span>Thaikkudam Bridge x Rock Band • 50k Watts Climax</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-action">
+                  <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Pro Night All-Access Concert Pass">
+                    <i class="fa-solid fa-ticket"></i> Book ProShow Pass — ₹599
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DETAILED ARTIST LINEUP CARDS -->
+          <div class="proshow-lineup-grid">
+            <!-- Artist 1: Headline Concert (DJ Shaan x Rock Ensemble) -->
+            <div class="proshow-card headline-card">
+              <div class="proshow-card-image">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80" alt="DJ Shaan Headline Concert" loading="lazy">
+                <span class="day-badge">DAY 3 • GRAND FINALE • ₹599 PASS</span>
+              </div>
+              <div class="proshow-card-content">
+                <span class="genre-tag"><i class="fa-solid fa-music"></i> HEADLINE SUPERSTAR</span>
+                <h3>DJ SHAAN & LIVE ROCK SENSATION</h3>
+                <p class="artist-subline"><i class="fa-solid fa-star text-gold"></i> Featuring Live Vocals by <strong>Kavya Jones</strong> & 8-Piece Touring Rock Band</p>
+                <p>The first Indian artist to conquer Tomorrowland Mainstage, Ministry of Sound, and Sunburn Arena. Delivering a 2.5-hour high-voltage set combining electrifying drops, live electric guitars, and laser choreography.</p>
+                <div class="proshow-meta">
+                  <span><i class="fa-regular fa-clock"></i> 7:30 PM Onwards</span>
+                  <span><i class="fa-solid fa-location-dot"></i> MIT Festival Grounds</span>
+                  <span><i class="fa-solid fa-tag text-gold"></i> Ticket: ₹599</span>
+                </div>
+                <div class="proshow-btn-row">
+                  <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Pro Night All-Access Concert Pass">
+                    <i class="fa-solid fa-ticket"></i> Get ₹599 Concert Pass
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Artist 2: EDM DJ Night (Lost Stories) -->
+            <div class="proshow-card">
+              <div class="proshow-card-image">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80" alt="Lost Stories EDM Night" loading="lazy">
+                <span class="day-badge">DAY 2 • 8:00 PM • INCLUDED IN ₹599</span>
+              </div>
+              <div class="proshow-card-content">
+                <span class="genre-tag"><i class="fa-solid fa-bolt"></i> ELEKTRA EDM NIGHT</span>
+                <h3>LOST STORIES (Prayag & Rishab)</h3>
+                <p class="artist-subline"><i class="fa-solid fa-compact-disc text-neon-orange"></i> Spinnin' Records • Tomorrowland • VH1 Supersonic</p>
+                <p>India's leading electronic music producer duo dropping basslines, melodic progressive anthems, and folk electronic hits that have topped Spotify and Beatport global charts.</p>
+                <div class="proshow-meta">
+                  <span><i class="fa-regular fa-clock"></i> 8:00 PM - 11:00 PM</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Main Stage Arena</span>
+                  <span><i class="fa-solid fa-tag text-gold"></i> Pass: ₹599</span>
+                </div>
+                <div class="proshow-btn-row">
+                  <button class="btn btn-outline-glow btn-block register-trigger-btn" data-event-title="Pro Night All-Access Concert Pass">
+                    <i class="fa-solid fa-ticket"></i> Reserve EDM Pass (₹599)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Artist 3: Acoustic & Celebrity Night (Thaikkudam Bridge / Avnial) -->
+            <div class="proshow-card">
+              <div class="proshow-card-image">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80" alt="Thaikkudam Bridge Fusion Night" loading="lazy">
+                <span class="day-badge">DAY 1 • 7:00 PM • INCLUDED IN ₹599</span>
+              </div>
+              <div class="proshow-card-content">
+                <span class="genre-tag"><i class="fa-solid fa-fire"></i> CELEBRITY INAUGURAL</span>
+                <h3>THAIKKUDAM BRIDGE FUSION</h3>
+                <p class="artist-subline"><i class="fa-solid fa-guitar text-neon-cyan"></i> 14-Piece Live Classical & Progressive Rock Ensemble</p>
+                <p>Kicking off IGNITE V7 with an iconic blend of electric guitars, soaring violin solos, indigenous percussion, and anthemic rock choruses accompanied by an inaugural fireworks gala.</p>
+                <div class="proshow-meta">
+                  <span><i class="fa-regular fa-clock"></i> 7:00 PM Onwards</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Open Air Amphitheatre</span>
+                  <span><i class="fa-solid fa-tag text-gold"></i> Pass: ₹599</span>
+                </div>
+                <div class="proshow-btn-row">
+                  <button class="btn btn-outline-glow btn-block register-trigger-btn" data-event-title="Pro Night All-Access Concert Pass">
+                    <i class="fa-solid fa-ticket"></i> Inaugural Pass (₹599)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concert Atmosphere Callout Box -->
+          <div class="stage-features-strip">
+            <div class="feature-strip-item">
+              <i class="fa-solid fa-volume-high"></i>
+              <div>
+                <h5>50K Watts Line-Array</h5>
+                <p>Concert-grade d&b audiotechnik acoustics</p>
+              </div>
+            </div>
+            <div class="feature-strip-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <div>
+                <h5>Laser & CO2 FX</h5>
+                <p>Intelligent moving heads, strobes & flame jets</p>
+              </div>
+            </div>
+            <div class="feature-strip-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div>
+                <h5>Safe & Monitored</h5>
+                <p>RFID access control & professional campus security</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. AUTOMOTIVE EXHIBITION (AUTO EXPO) -->
+    <section class="section autoexpo-section" id="autoexpo">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-gauge-high"></i> HIGH-OCTANE HORSEPOWER • ENTRY PASS: ₹100</span>
+          <h2 class="section-title">IGNITE <span class="gradient-text">AUTO EXPO</span></h2>
+          <p class="section-subtitle">
+            Where metal meets adrenaline. Custom street builds, track-spec supercars, vintage legends, exotic superbikes, and exhaust sound battles. Public entry passes available for just <strong>₹100</strong>!
+          </p>
+        </div>
+
+        <div class="autoexpo-showcase-grid">
+          <!-- Main Hero Machine -->
+          <div class="auto-spotlight-card">
+            <div class="auto-img-wrap">
+              <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80" alt="Modified Exotic Supercar" loading="lazy">
+              <div class="auto-badge-overlay">
+                <span class="speed-badge"><i class="fa-solid fa-fire"></i> HYPER & SUPERBUILD ZONE</span>
+              </div>
+            </div>
+            <div class="auto-spotlight-info">
+              <div class="auto-header-row">
+                <div>
+                  <span class="category-chip">EXOTIC & STREET MODS</span>
+                  <h3>Supercar & Custom Widebody Pavilion</h3>
+                </div>
+                <div class="hp-stat">
+                  <span class="num">850+</span>
+                  <span class="lbl">HORSEPOWER SHOWCASE</span>
+                </div>
+              </div>
+              <p>
+                Witness state-of-the-art aerodynamic kits, bagged air suspension setups, forged performance engines, custom carbon fiber builds, and precision ECU tuners demonstrating dyno-proven power.
+              </p>
+              <div class="auto-specs-bar">
+                <div class="spec-cell"><i class="fa-solid fa-gauge"></i> 0-100 km/h: 2.9s</div>
+                <div class="spec-cell"><i class="fa-solid fa-wrench"></i> 40+ Exhibitor Vehicles</div>
+                <div class="spec-cell"><i class="fa-solid fa-trophy"></i> ₹40,000 Best-in-Show Trophy</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Auto Feature 1: Superbikes -->
+          <div class="auto-sub-card">
+            <div class="auto-sub-img">
+              <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80" alt="Superbike Exhibition" loading="lazy">
+              <span class="sub-badge"><i class="fa-solid fa-motorcycle"></i> SUPERBIKE ARENA</span>
+            </div>
+            <div class="auto-sub-body">
+              <h4>Exotic Superbikes & Liter-Class Monsters</h4>
+              <p>Ducati, Kawasaki Ninja H2, Yamaha R1, and handcrafted custom choppers showcasing throttle response, titanium exhausts, and engineering prowess.</p>
+              <div class="auto-sub-footer">
+                <span class="tag"><i class="fa-regular fa-clock"></i> Day 2 & 3 Full Day</span>
+                <button class="btn btn-sm btn-outline-glow register-trigger-btn" data-event-title="Auto Expo - Bike Exhibit Entry">Register Vehicle</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Auto Feature 2: Exhaust Battle & Stunts -->
+          <div class="auto-sub-card">
+            <div class="auto-sub-img">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Exhaust Sound Battle" loading="lazy">
+              <span class="sub-badge"><i class="fa-solid fa-volume-high"></i> REV LIMITER CLASH</span>
+            </div>
+            <div class="auto-sub-body">
+              <h4>Decibel Duel: The Loudest Exhaust Clash</h4>
+              <p>Decibel meters calibrated. Pop-and-bang maps, straight pipes, and two-step launch control battles to crown the undisputed Decibel Champion.</p>
+              <div class="auto-sub-footer">
+                <span class="tag"><i class="fa-solid fa-trophy"></i> ₹15,000 Cash Prize</span>
+                <button class="btn btn-sm btn-outline-glow register-trigger-btn" data-event-title="Decibel Duel Exhaust Battle">Join Competition</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto Highlights Banner -->
+        <div class="auto-perks-row">
+          <div class="auto-perk">
+            <i class="fa-solid fa-camera"></i>
+            <div>
+              <strong>Pro Automotive Photoshoots</strong>
+              <p>Dedicated studio garage lighting for exhibitors & enthusiasts</p>
+            </div>
+          </div>
+          <div class="auto-perk">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <strong>EV & Next-Gen Mobility</strong>
+              <p>Formula Student electric prototypes and autonomous telemetry demos</p>
+            </div>
+          </div>
+          <div class="auto-perk">
+            <i class="fa-solid fa-gas-pump"></i>
+            <div>
+              <strong>Racing Simulator Rig</strong>
+              <p>Direct-drive sim cockpits with VR hot-lap challenges and leaderboard prizes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TECHNOLOGY & LEARNING (TECH ZONE) -->
+    <section class="section techzone-section" id="techzone">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> FUTURE-TECH INCUBATOR</span>
+          <h2 class="section-title">Workshops, Webinars & <span class="gradient-text">Expert Lectures</span></h2>
+          <p class="section-subtitle">
+            Immerse yourself in high-impact technical masterclasses, certified industry webinars, and hands-on laboratory experiences led by pioneers in AI, Robotics, and Cybersecurity.
+          </p>
+        </div>
+
+        <div class="techzone-grid">
+          <!-- Workshop 1: Generative AI & Deep Learning -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+              <span class="tech-badge">HANDS-ON WORKSHOP</span>
+            </div>
+            <div class="tech-card-image">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=700&q=80" alt="AI Neural Networks" loading="lazy">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-cat">ARTIFICIAL INTELLIGENCE</span>
+              <h4>Generative AI & Agentic Systems Masterclass</h4>
+              <p>Build and deploy autonomous multi-agent pipelines using LLMs, LangChain, RAG architecture, and production inference APIs with industry mentorship.</p>
+              <ul class="tech-features">
+                <li><i class="fa-solid fa-check"></i> Python SDK & API Keys Provided</li>
+                <li><i class="fa-solid fa-check"></i> Verified Certificate of Completion</li>
+                <li><i class="fa-solid fa-check"></i> Take-home Capstone Project</li>
+              </ul>
+              <div class="tech-meta-row">
+                <span><i class="fa-regular fa-clock"></i> 4 Hours • Day 1</span>
+                <span><i class="fa-solid fa-users"></i> Limited 60 Seats</span>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Generative AI & Agentic Systems Workshop">
+                <i class="fa-solid fa-arrow-right"></i> Register Workshop
+              </button>
+            </div>
+          </div>
+
+          <!-- Workshop 2: Cybersecurity & Ethical Hacking -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-wrap"><i class="fa-solid fa-shield-cat"></i></div>
+              <span class="tech-badge">LIVE LAB</span>
+            </div>
+            <div class="tech-card-image">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80" alt="Cybersecurity Matrix" loading="lazy">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-cat">CYBERSECURITY</span>
+              <h4>Red Team Ops & Offensive Ethical Hacking</h4>
+              <p>Hands-on penetration testing inside sandboxed CTF cyber ranges. Learn vulnerability discovery, buffer overflows, Wi-Fi auditing, and zero-day defense.</p>
+              <ul class="tech-features">
+                <li><i class="fa-solid fa-check"></i> Live CTF Sandboxed Arena</li>
+                <li><i class="fa-solid fa-check"></i> Kali Linux Toolkit Walkthrough</li>
+                <li><i class="fa-solid fa-check"></i> Industry Security Cert Guidance</li>
+              </ul>
+              <div class="tech-meta-row">
+                <span><i class="fa-regular fa-clock"></i> 5 Hours • Day 2</span>
+                <span><i class="fa-solid fa-users"></i> Limited 50 Seats</span>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Red Team Cybersecurity Workshop">
+                <i class="fa-solid fa-arrow-right"></i> Register Workshop
+              </button>
+            </div>
+          </div>
+
+          <!-- Workshop 3: Robotics, Drones & IoT -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-wrap"><i class="fa-solid fa-robot"></i></div>
+              <span class="tech-badge">HARDWARE LAB</span>
+            </div>
+            <div class="tech-card-image">
+              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=700&q=80" alt="Robotics and Automation" loading="lazy">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-cat">ROBOTICS & EMBEDDED</span>
+              <h4>Autonomous Quadcopters & ROS2 Robotics</h4>
+              <p>Program PID controllers, calibrate gyro sensors, and build autonomous waypoint flight paths using Raspberry Pi and Robot Operating System (ROS2).</p>
+              <ul class="tech-features">
+                <li><i class="fa-solid fa-check"></i> Hardware Drone Kits for Teams</li>
+                <li><i class="fa-solid fa-check"></i> Flight Simulator Benchmarking</li>
+                <li><i class="fa-solid fa-check"></i> Arena Flight Demonstration</li>
+              </ul>
+              <div class="tech-meta-row">
+                <span><i class="fa-regular fa-clock"></i> 4.5 Hours • Day 2</span>
+                <span><i class="fa-solid fa-users"></i> 15 Teams Max</span>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Autonomous Quadcopters & ROS2 Workshop">
+                <i class="fa-solid fa-arrow-right"></i> Register Workshop
+              </button>
+            </div>
+          </div>
+
+          <!-- Hackathon & Lectures Banner Card -->
+          <div class="tech-card highlight-tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+              <span class="tech-badge"><i class="fa-solid fa-fire"></i> ₹1,00,000 PRIZE</span>
+            </div>
+            <div class="tech-card-image">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=700&q=80" alt="Code Sprint Hackathon" loading="lazy">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-cat">NATIONAL HACKATHON</span>
+              <h4>IGNITE 24-Hour Code Sprint: Build the Future</h4>
+              <p>Non-stop 24-hour national hackathon across Web3, FinTech, Healthcare AI, and Smart Cities with direct venture capital pitching.</p>
+              <ul class="tech-features">
+                <li><i class="fa-solid fa-check"></i> Free High-Speed Wi-Fi & Midnight Meals</li>
+                <li><i class="fa-solid fa-check"></i> Mentorship from Silicon Valley Engineers</li>
+                <li><i class="fa-solid fa-check"></i> Internship & Incubation Offers</li>
+              </ul>
+              <div class="tech-meta-row">
+                <span><i class="fa-regular fa-clock"></i> 24 Hours • Day 1-2</span>
+                <span><i class="fa-solid fa-users"></i> Teams of 2-4</span>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="24-Hour National Hackathon Code Sprint">
+                <i class="fa-solid fa-bolt"></i> Register Hackathon Team
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expert Lectures & Webinars Accordion / Strip -->
+        <div class="lectures-strip">
+          <div class="lectures-header">
+            <h3><i class="fa-solid fa-podcast"></i> Industry Keynotes & Global Webinars</h3>
+            <p>Live hybrid auditorium sessions streamed globally with Q&A</p>
+          </div>
+          <div class="lectures-grid">
+            <div class="lecture-item">
+              <div class="speaker-avatar">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Speaker" loading="lazy">
+              </div>
+              <div class="lecture-details">
+                <span class="lecture-time">DAY 1 • 11:30 AM (Hybrid)</span>
+                <h4>Quantum Computing & Post-Quantum Encryption</h4>
+                <p>Keynote Address by Senior Research Scientist, Deep Tech Labs</p>
+              </div>
+            </div>
+            <div class="lecture-item">
+              <div class="speaker-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Speaker" loading="lazy">
+              </div>
+              <div class="lecture-details">
+                <span class="lecture-time">DAY 2 • 2:00 PM (Auditorium)</span>
+                <h4>The Electric Revolution: Battery Architectures & EV Grid</h4>
+                <p>Interactive Discussion with Chief Powertrain Engineer, Apex E-Mobility</p>
+              </div>
+            </div>
+            <div class="lecture-item">
+              <div class="speaker-avatar">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Speaker" loading="lazy">
+              </div>
+              <div class="lecture-details">
+                <span class="lecture-time">DAY 3 • 10:30 AM (Webinar)</span>
+                <h4>Building Scalable AI Startups in 2027</h4>
+                <p>Fireside Chat with Tech Founder & Y-Combinator Alumnus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CULTURAL ZONE (FASHION, BODY SHOW, DANCE, SINGING) -->
+    <section class="section cultural-section" id="cultural">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-masks-theater"></i> THE GRAND SPOTLIGHT</span>
+          <h2 class="section-title">Cultural & <span class="gradient-text">Stage Spectacular</span></h2>
+          <p class="section-subtitle">
+            Unleash pure passion, poise, and rhythm. From haute couture runways to thunderous street dance battles and ironclad physiques.
+          </p>
+        </div>
+
+        <div class="cultural-showcase-grid">
+          <!-- 1. Fashion Show -->
+          <div class="cultural-card fashion-card">
+            <div class="cultural-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80" alt="Fashion Show Runway" loading="lazy">
+              <div class="cultural-tag-badge"><i class="fa-solid fa-gem"></i> HIGH COUTURE</div>
+            </div>
+            <div class="cultural-body">
+              <span class="event-series">IGNITE RUNWAY</span>
+              <h3>VOGUE ILLUMINATE: The Fashion Show</h3>
+              <p>A dazzling showcase of avant-garde design, dramatic silhouettes, themed choreography, and haute couture lighting. Compete with top campus fashion societies.</p>
+              <div class="cultural-stats">
+                <div><i class="fa-solid fa-trophy text-gold"></i> Prize: ₹50,000</div>
+                <div><i class="fa-solid fa-users"></i> Team: 10-18 Models</div>
+                <div><i class="fa-solid fa-clock"></i> Time: 12 Mins</div>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Vogue Illuminate Fashion Show">
+                <i class="fa-solid fa-sparkles"></i> Register Fashion Team
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Body Show -->
+          <div class="cultural-card bodyshow-card">
+            <div class="cultural-img-wrap">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80" alt="Body Show Physique Championship" loading="lazy">
+              <div class="cultural-tag-badge"><i class="fa-solid fa-dumbbell"></i> PHYSIQUE CHAMPIONSHIP</div>
+            </div>
+            <div class="cultural-body">
+              <span class="event-series">IRON TITAN</span>
+              <h3>BODY SHOW: Inter-College Physique Championship</h3>
+              <p>Celebrating muscularity, vascularity, symmetry, and stage poise. Judged by national bodybuilding champions across weight and Men's Physique divisions.</p>
+              <div class="cultural-stats">
+                <div><i class="fa-solid fa-trophy text-gold"></i> Prize: ₹35,000 + Medals</div>
+                <div><i class="fa-solid fa-user"></i> Solo Division</div>
+                <div><i class="fa-solid fa-scale-balanced"></i> Weigh-in: Day 2 9 AM</div>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Body Show Physique Championship">
+                <i class="fa-solid fa-dumbbell"></i> Register for Body Show
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Break the Floor -->
+          <div class="cultural-card dance-card">
+            <div class="cultural-img-wrap">
+              <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=900&q=80" alt="Break the Floor Street Dance" loading="lazy">
+              <div class="cultural-tag-badge"><i class="fa-solid fa-fire-burner"></i> STREET CREW WARS</div>
+            </div>
+            <div class="cultural-body">
+              <span class="event-series">URBAN HIP-HOP BATTLE</span>
+              <h3>BREAK THE FLOOR: Street Dance Championship</h3>
+              <p>Explosive crew choreography, cyphers, popping, locking, breaking, and 1v1 all-styles face-offs. The floor is on fire with pure underground energy.</p>
+              <div class="cultural-stats">
+                <div><i class="fa-solid fa-trophy text-gold"></i> Prize: ₹45,000</div>
+                <div><i class="fa-solid fa-users"></i> Crew (6-20) / 1v1 Battle</div>
+                <div><i class="fa-solid fa-headphones"></i> Live DJ Cyphers</div>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Break the Floor Dance Championship">
+                <i class="fa-solid fa-bolt"></i> Register Dance Crew
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Voice of MIT -->
+          <div class="cultural-card singing-card">
+            <div class="cultural-img-wrap">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80" alt="Voice of MIT Solo Vocals" loading="lazy">
+              <div class="cultural-tag-badge"><i class="fa-solid fa-microphone-lines"></i> VOCAL SHOWDOWN</div>
+            </div>
+            <div class="cultural-body">
+              <span class="event-series">VOCAL STAR</span>
+              <h3>VOICE OF MIT: The Singing Battle</h3>
+              <p>The quest for the golden voice of the year. Western solo, Indian classical, contemporary pop, and battle duets judged by industry recording artists.</p>
+              <div class="cultural-stats">
+                <div><i class="fa-solid fa-trophy text-gold"></i> Prize: ₹25,000 + Studio Rec</div>
+                <div><i class="fa-solid fa-microphone"></i> Solo & Duet</div>
+                <div><i class="fa-solid fa-compact-disc"></i> Accompaniment Live/Karaoke</div>
+              </div>
+              <button class="btn btn-primary btn-block glow-btn register-trigger-btn" data-event-title="Voice of MIT Singing Competition">
+                <i class="fa-solid fa-music"></i> Register Vocalist
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SPORTS CHAMPIONSHIP (IGNITE SPORTS ARENA) -->
+    <section class="section sports-section" id="sports">
+      <div class="sports-stadium-lights">
+        <div class="floodlight floodlight-1"></div>
+        <div class="floodlight floodlight-2"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-shield"></i> CHAMPIONSHIP GLORY</span>
+          <h2 class="section-title">IGNITE <span class="gradient-text">SPORTS ARENA</span></h2>
+          <p class="section-subtitle">
+            5 High-Octane Tournaments. Hundreds of Athletes. Total Tactical Warfare. Take your team to the podium.
+          </p>
+        </div>
+
+        <!-- Sports Tab Controller -->
+        <div class="sports-tab-controller">
+          <button class="sport-tab-btn active" data-sport="kabaddi">
+            <i class="fa-solid fa-hand-fist"></i>
+            <span>Kabaddi</span>
+          </button>
+          <button class="sport-tab-btn" data-sport="football">
+            <i class="fa-solid fa-futbol"></i>
+            <span>Football (11s)</span>
+          </button>
+          <button class="sport-tab-btn" data-sport="cricket">
+            <i class="fa-solid fa-baseball-bat-ball"></i>
+            <span>County Cricket</span>
+          </button>
+          <button class="sport-tab-btn" data-sport="volleyball">
+            <i class="fa-solid fa-volleyball"></i>
+            <span>Volleyball</span>
+          </button>
+          <button class="sport-tab-btn" data-sport="threesfootball">
+            <i class="fa-solid fa-shoe-prints"></i>
+            <span>3's Football</span>
+          </button>
+        </div>
+
+        <!-- Sports Content Display -->
+        <div class="sports-display-wrapper">
+          <!-- 1. KABADDI -->
+          <div class="sport-pane active" id="sport-kabaddi">
+            <div class="sport-pane-grid">
+              <div class="sport-pane-visual">
+                <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&w=900&q=80" alt="Kabaddi Tournament Action" loading="lazy">
+                <div class="sport-overlay-badge">
+                  <span>PRO MAT SURFACE</span>
+                </div>
+              </div>
+              <div class="sport-pane-info">
+                <div class="sport-header-row">
+                  <div>
+                    <span class="sport-sub">TACTICAL POWER & AGILITY</span>
+                    <h3>Inter-Collegiate Kabaddi Championship</h3>
+                  </div>
+                  <div class="prize-tag">
+                    <span class="label">PRIZE POOL</span>
+                    <span class="amount">₹35,000</span>
+                  </div>
+                </div>
+                <p class="sport-desc">
+                  Pure grit, bone-crushing tackles, lightning-fast toe-touches, and multi-point super raids. Matches played on professional synthetic mats under stadium floodlights following official AKFI rules.
+                </p>
+                <div class="sport-specifications">
+                  <div class="spec-box"><i class="fa-solid fa-users"></i> Squad: 7 Players + 5 Subs</div>
+                  <div class="spec-box"><i class="fa-solid fa-stopwatch"></i> Format: 20-5-20 Min Knockout</div>
+                  <div class="spec-box"><i class="fa-solid fa-weight-scale"></i> Weight Limit: 80 kg max</div>
+                  <div class="spec-box"><i class="fa-solid fa-trophy"></i> Rolling Trophy & Medals</div>
+                </div>
+                <div class="sport-fixtures-preview">
+                  <h5><i class="fa-solid fa-calendar-days"></i> Match Schedule & Fixture:</h5>
+                  <p>Knockout rounds Day 1 & Day 2 (Morning). Semi-Finals & Grand Finals under floodlights Day 2 (7:00 PM).</p>
+                </div>
+                <div class="sport-actions">
+                  <button class="btn btn-primary glow-btn register-trigger-btn" data-event-title="Inter-Collegiate Kabaddi Tournament" data-sport-type="Kabaddi">
+                    <i class="fa-solid fa-ticket"></i> Register Kabaddi Team
+                  </button>
+                  <a href="#schedule" class="btn btn-outline">
+                    <i class="fa-solid fa-list-check"></i> View Fixture Brackets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. FOOTBALL -->
+          <div class="sport-pane" id="sport-football">
+            <div class="sport-pane-grid">
+              <div class="sport-pane-visual">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80" alt="Football Championship Action" loading="lazy">
+                <div class="sport-overlay-badge">
+                  <span>FULL STADIUM TURF</span>
+                </div>
+              </div>
+              <div class="sport-pane-info">
+                <div class="sport-header-row">
+                  <div>
+                    <span class="sport-sub">THE BEAUTIFUL GAME</span>
+                    <h3>IGNITE Cup: 11-a-Side Football Tournament</h3>
+                  </div>
+                  <div class="prize-tag">
+                    <span class="label">PRIZE POOL</span>
+                    <span class="amount">₹50,000</span>
+                  </div>
+                </div>
+                <p class="sport-desc">
+                  The crowning football tournament featuring 32 elite collegiate teams competing across 3 days on the MIT Main Stadium turf under international FIFA standard regulations.
+                </p>
+                <div class="sport-specifications">
+                  <div class="spec-box"><i class="fa-solid fa-users"></i> Squad: 11 Starters + 7 Subs</div>
+                  <div class="spec-box"><i class="fa-solid fa-stopwatch"></i> Duration: 35-10-35 Min</div>
+                  <div class="spec-box"><i class="fa-solid fa-whistle"></i> Official AIFF Referees</div>
+                  <div class="spec-box"><i class="fa-solid fa-boot"></i> Golden Boot & Glove Awards</div>
+                </div>
+                <div class="sport-fixtures-preview">
+                  <h5><i class="fa-solid fa-calendar-days"></i> Match Schedule & Fixture:</h5>
+                  <p>Group stages Day 1. Quarter & Semis Day 2. The Championship Final Day 3 (4:00 PM Stadium Pitch).</p>
+                </div>
+                <div class="sport-actions">
+                  <button class="btn btn-primary glow-btn register-trigger-btn" data-event-title="IGNITE Cup 11-a-Side Football" data-sport-type="Football">
+                    <i class="fa-solid fa-ticket"></i> Register Football Squad
+                  </button>
+                  <a href="#schedule" class="btn btn-outline">
+                    <i class="fa-solid fa-list-check"></i> View Fixture Brackets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. COUNTY CRICKET -->
+          <div class="sport-pane" id="sport-cricket">
+            <div class="sport-pane-grid">
+              <div class="sport-pane-visual">
+                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80" alt="County Cricket Match" loading="lazy">
+                <div class="sport-overlay-badge">
+                  <span>LEATHER BALL T10</span>
+                </div>
+              </div>
+              <div class="sport-pane-info">
+                <div class="sport-header-row">
+                  <div>
+                    <span class="sport-sub">GENTLEMEN'S GLORY</span>
+                    <h3>IGNITE County Cricket Championship</h3>
+                  </div>
+                  <div class="prize-tag">
+                    <span class="label">PRIZE POOL</span>
+                    <span class="amount">₹45,000</span>
+                  </div>
+                </div>
+                <p class="sport-desc">
+                  White ball, coloured jerseys, and non-stop maximums. Fast-paced 10-over county cricket rules designed for aggressive batting, deadly yorkers, and electric fielding.
+                </p>
+                <div class="sport-specifications">
+                  <div class="spec-box"><i class="fa-solid fa-users"></i> Squad: 11 Playing + 4 Reserves</div>
+                  <div class="spec-box"><i class="fa-solid fa-circle-dot"></i> Format: 10 Overs a Side (White Ball)</div>
+                  <div class="spec-box"><i class="fa-solid fa-tv"></i> Live Third Umpire & Stream</div>
+                  <div class="spec-box"><i class="fa-solid fa-award"></i> Player of Tournament Kit</div>
+                </div>
+                <div class="sport-fixtures-preview">
+                  <h5><i class="fa-solid fa-calendar-days"></i> Match Schedule & Fixture:</h5>
+                  <p>Knockouts throughout Days 1 & 2. Floodlight Final Day 3 under MIT Oval floodlights.</p>
+                </div>
+                <div class="sport-actions">
+                  <button class="btn btn-primary glow-btn register-trigger-btn" data-event-title="County Cricket Championship" data-sport-type="Cricket">
+                    <i class="fa-solid fa-ticket"></i> Register Cricket Team
+                  </button>
+                  <a href="#schedule" class="btn btn-outline">
+                    <i class="fa-solid fa-list-check"></i> View Fixture Brackets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. VOLLEYBALL -->
+          <div class="sport-pane" id="sport-volleyball">
+            <div class="sport-pane-grid">
+              <div class="sport-pane-visual">
+                <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=900&q=80" alt="Volleyball Spike Action" loading="lazy">
+                <div class="sport-overlay-badge">
+                  <span>INDOOR ARENA</span>
+                </div>
+              </div>
+              <div class="sport-pane-info">
+                <div class="sport-header-row">
+                  <div>
+                    <span class="sport-sub">VERTICAL POWER</span>
+                    <h3>Inter-College Volleyball Smash Trophy</h3>
+                  </div>
+                  <div class="prize-tag">
+                    <span class="label">PRIZE POOL</span>
+                    <span class="amount">₹30,000</span>
+                  </div>
+                </div>
+                <p class="sport-desc">
+                  Thunderous spikes, tactical setter feints, and acrobatic defensive digs. Played in the MIT Indoor Sports Complex on synthetic courts with official FIVB standards.
+                </p>
+                <div class="sport-specifications">
+                  <div class="spec-box"><i class="fa-solid fa-users"></i> Squad: 6 Court + 4 Subs</div>
+                  <div class="spec-box"><i class="fa-solid fa-trophy"></i> Best of 3 Sets (25-25-15)</div>
+                  <div class="spec-box"><i class="fa-solid fa-flag"></i> Professional VFI Referees</div>
+                  <div class="spec-box"><i class="fa-solid fa-star"></i> Best Spiker & Blocker Awards</div>
+                </div>
+                <div class="sport-fixtures-preview">
+                  <h5><i class="fa-solid fa-calendar-days"></i> Match Schedule & Fixture:</h5>
+                  <p>Prelims Day 1 (10:00 AM - 6:00 PM). Semi-Finals & Finals Day 2 (3:00 PM Indoor Arena).</p>
+                </div>
+                <div class="sport-actions">
+                  <button class="btn btn-primary glow-btn register-trigger-btn" data-event-title="Volleyball Smash Trophy" data-sport-type="Volleyball">
+                    <i class="fa-solid fa-ticket"></i> Register Volleyball Team
+                  </button>
+                  <a href="#schedule" class="btn btn-outline">
+                    <i class="fa-solid fa-list-check"></i> View Fixture Brackets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. 3's FOOTBALL -->
+          <div class="sport-pane" id="sport-threesfootball">
+            <div class="sport-pane-grid">
+              <div class="sport-pane-visual">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80" alt="3's Street Football Arena" loading="lazy">
+                <div class="sport-overlay-badge">
+                  <span>CAGE TURF ARENA</span>
+                </div>
+              </div>
+              <div class="sport-pane-info">
+                <div class="sport-header-row">
+                  <div>
+                    <span class="sport-sub">RAPID-FIRE TURF MADNESS</span>
+                    <h3>IGNITE 3's Street Football Shootout</h3>
+                  </div>
+                  <div class="prize-tag">
+                    <span class="label">PRIZE POOL</span>
+                    <span class="amount">₹25,000</span>
+                  </div>
+                </div>
+                <p class="sport-desc">
+                  No goalkeepers, miniature goals, enclosed cage turf, and non-stop ball movement. Pure street flair, nutmegs, rapid 1-2 passes, and 10 minutes of breathless intensity.
+                </p>
+                <div class="sport-specifications">
+                  <div class="spec-box"><i class="fa-solid fa-users"></i> Squad: 3 Starters + 2 Rolling Subs</div>
+                  <div class="spec-box"><i class="fa-solid fa-stopwatch"></i> Duration: 5-2-5 Mins High Pace</div>
+                  <div class="spec-box"><i class="fa-solid fa-border-all"></i> Mini Turf Enclosed Pitch</div>
+                  <div class="spec-box"><i class="fa-solid fa-fire"></i> Sudden Death Golden Goal</div>
+                </div>
+                <div class="sport-fixtures-preview">
+                  <h5><i class="fa-solid fa-calendar-days"></i> Match Schedule & Fixture:</h5>
+                  <p>Continuous rounds on the Cage Turf Arena on Day 2 & Day 3. 48 teams maximum capacity.</p>
+                </div>
+                <div class="sport-actions">
+                  <button class="btn btn-primary glow-btn register-trigger-btn" data-event-title="IGNITE 3's Street Football" data-sport-type="3's Football">
+                    <i class="fa-solid fa-ticket"></i> Register 3's Squad
+                  </button>
+                  <a href="#schedule" class="btn btn-outline">
+                    <i class="fa-solid fa-list-check"></i> View Fixture Brackets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FESTIVAL SCHEDULE & TIMETABLE -->
+    <section class="section schedule-section" id="schedule">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-regular fa-calendar"></i> CHRONICLES OF IGNITE</span>
+          <h2 class="section-title">Festival <span class="gradient-text">Event Schedule</span></h2>
+          <p class="section-subtitle">
+            Plan your 3-day itinerary across stages, laboratories, turf pitches, and pavilions.
+          </p>
+        </div>
+
+        <!-- Schedule Day Tabs -->
+        <div class="schedule-day-nav">
+          <button class="day-tab active" data-day="day1">
+            <span class="day-title">DAY 01</span>
+            <span class="day-subtitle">Genesis & Inception</span>
+          </button>
+          <button class="day-tab" data-day="day2">
+            <span class="day-title">DAY 02</span>
+            <span class="day-subtitle">Velocity & Battles</span>
+          </button>
+          <button class="day-tab" data-day="day3">
+            <span class="day-title">DAY 03</span>
+            <span class="day-subtitle">Climax & Pro Night</span>
+          </button>
+        </div>
+
+        <!-- Schedule Timeline Content Container -->
+        <div class="schedule-content" id="scheduleContent">
+          <!-- Injected via JavaScript based on Day selection -->
+        </div>
+
+        <div class="schedule-download-cta text-center">
+          <a href="javascript:void(0)" class="btn btn-outline-glow btn-sm" id="downloadPdfScheduleBtn">
+            <i class="fa-solid fa-file-pdf"></i> Download Official Printable Schedule (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CINEMATIC GALLERY -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-camera-retro"></i> VISUAL CHRONICLES</span>
+          <h2 class="section-title">Cinematic <span class="gradient-text">Festival Gallery</span></h2>
+          <p class="section-subtitle">
+            A glimpse into the adrenaline, stage fireworks, roaring exhausts, and crowd energy that define IGNITE.
+          </p>
+        </div>
+
+        <div class="gallery-filter-tabs">
+          <button class="gal-filter active" data-gal="all">All Shots</button>
+          <button class="gal-filter" data-gal="concerts">Concerts & Stage</button>
+          <button class="gal-filter" data-gal="auto">Auto Expo</button>
+          <button class="gal-filter" data-gal="sports">Sports Glory</button>
+          <button class="gal-filter" data-gal="cultural">Culture & Dance</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Gallery Items -->
+          <div class="gallery-item" data-category="concerts" data-img-url="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" data-caption="Pro Night Headline Concert — 15,000+ Students Singing in Unison">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Concert Stage" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Pro Night Stage</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="auto" data-img-url="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80" data-caption="Auto Expo Supercar Pavilion — Modified Aerodynamics">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" alt="Modified Supercar" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Auto Expo Pavilion</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="sports" data-img-url="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80" data-caption="Championship Football Finals Under Floodlights">
+            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Football Clash" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Sports Arena Finals</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="cultural" data-img-url="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80" data-caption="Break the Floor Street Dance Cypher Clash">
+            <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80" alt="Dance Battle" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Street Dance Cypher</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="cultural" data-img-url="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" data-caption="Vogue Illuminate Fashion Show Runway">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Fashion Runway" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Fashion Runway</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="auto" data-img-url="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80" data-caption="Superbike Rev Battle at the Auto Expo">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80" alt="Superbikes" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Superbike Pavilion</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="concerts" data-img-url="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" data-caption="Elektra DJ Night Laser Canons">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="EDM Lasers" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>EDM Laser Show</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="sports" data-img-url="https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&w=1200&q=80" data-caption="Kabaddi High-Tackle on Pro Mat Arena">
+            <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&w=600&q=80" alt="Kabaddi Action" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Kabaddi Arena</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. SPONSORS & PARTNERS -->
+    <section class="section sponsors-section" id="sponsors">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-handshake"></i> POWERED BY INDUSTRY LEADERS</span>
+          <h2 class="section-title">Our Valued <span class="gradient-text">Partners & Sponsors</span></h2>
+          <p class="section-subtitle">
+            Supported by leading technology conglomerates, automotive pioneers, energy brands, and media networks.
+          </p>
+        </div>
+
+        <div class="sponsors-wrapper">
+          <!-- Title Partner -->
+          <div class="sponsor-tier title-tier">
+            <span class="tier-label"><i class="fa-solid fa-crown text-gold"></i> TITLE SPONSOR</span>
+            <div class="sponsor-cards-row">
+              <div class="sponsor-card gold-border">
+                <div class="sponsor-placeholder-logo">
+                  <i class="fa-solid fa-atom fa-2x"></i>
+                  <span class="brand-name">NEXUS GLOBAL DYNAMICS</span>
+                  <span class="brand-desc">Official Technology & Innovation Title Partner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Powered By & Associate Partners -->
+          <div class="sponsor-tier assoc-tier">
+            <span class="tier-label">POWERED BY & ASSOCIATE PARTNERS</span>
+            <div class="sponsor-cards-row grid-assoc">
+              <div class="sponsor-card">
+                <div class="sponsor-placeholder-logo">
+                  <i class="fa-solid fa-car fa-2x"></i>
+                  <span class="brand-name">APEX MOTORSPORTS</span>
+                  <span class="brand-desc">Official Auto Expo Partner</span>
+                </div>
+              </div>
+              <div class="sponsor-card">
+                <div class="sponsor-placeholder-logo">
+                  <i class="fa-solid fa-bolt fa-2x"></i>
+                  <span class="brand-name">VORTEX ENERGY</span>
+                  <span class="brand-desc">Official Beverage & Energy Drink</span>
+                </div>
+              </div>
+              <div class="sponsor-card">
+                <div class="sponsor-placeholder-logo">
+                  <i class="fa-solid fa-cloud fa-2x"></i>
+                  <span class="brand-name">AETHER CLOUD</span>
+                  <span class="brand-desc">Cloud & Hackathon Infra Partner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Media, Audio & Hospitality Partners -->
+          <div class="sponsor-tier media-tier">
+            <span class="tier-label">ECOSYSTEM & MEDIA PARTNERS</span>
+            <div class="sponsor-cards-row grid-media">
+              <div class="sponsor-card-mini">
+                <i class="fa-solid fa-radio"></i>
+                <span>98.3 RADIO IGNITE</span>
+              </div>
+              <div class="sponsor-card-mini">
+                <i class="fa-solid fa-headphones"></i>
+                <span>SONIC BEATS AUDIO</span>
+              </div>
+              <div class="sponsor-card-mini">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>CAMPUS CHRONICLE</span>
+              </div>
+              <div class="sponsor-card-mini">
+                <i class="fa-solid fa-shirt"></i>
+                <span>CYBER THREADS APPAREL</span>
+              </div>
+              <div class="sponsor-card-mini">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>FIBERLINK 10G</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Become a Sponsor Callout -->
+          <div class="sponsor-cta-banner">
+            <div class="sponsor-cta-text">
+              <h4>Want to Elevate Your Brand Before 25,000+ Young Technologists & Leaders?</h4>
+              <p>Explore custom booth spaces, brand activations, stage title naming, and digital integrations for IGNITE V7.</p>
+            </div>
+            <a href="#contact" class="btn btn-outline-glow">
+              <i class="fa-solid fa-file-arrow-down"></i> Request Sponsorship Deck
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. REGISTRATION HUB (INTERACTIVE MULTI-TAB WITH INSTANT DIGITAL PASS) -->
+    <section class="section registration-section" id="registration">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-id-card"></i> JOIN THE ADRENALINE</span>
+          <h2 class="section-title">Official Festival <span class="gradient-text">Registration Portal</span></h2>
+          <p class="section-subtitle">
+            Register as an individual participant, event team, or sports championship squad. Receive your instant verified QR E-Pass.
+          </p>
+        </div>
+
+        <div class="registration-container">
+          <!-- Registration Tabs -->
+          <div class="reg-tabs-header">
+            <button class="reg-tab active" data-reg-type="individual">
+              <i class="fa-solid fa-user"></i>
+              <span>Individual Pass</span>
+            </button>
+            <button class="reg-tab" data-reg-type="team">
+              <i class="fa-solid fa-users"></i>
+              <span>Event / Tech Team</span>
+            </button>
+            <button class="reg-tab" data-reg-type="sports">
+              <i class="fa-solid fa-trophy"></i>
+              <span>Sports Arena Team</span>
+            </button>
+          </div>
+
+          <!-- Registration Form Body -->
+          <form class="reg-form" id="mainRegistrationForm" novalidate>
+            <!-- Form Progress Indicator -->
+            <div class="form-instruction-bar">
+              <span id="formTypeTitle"><i class="fa-solid fa-sparkles"></i> Individual Participant Registration</span>
+              <span class="required-note">* All fields marked are required for QR E-Pass</span>
+            </div>
+
+            <!-- Dynamic Fields Container based on Tab -->
+            <div class="form-fields-grid">
+              <!-- Full Name / Team Lead -->
+              <div class="form-group">
+                <label for="regFullName" id="nameLabel"><i class="fa-solid fa-user"></i> Full Name *</label>
+                <input type="text" id="regFullName" name="fullName" placeholder="e.g. Rahul Sharma" required>
+                <span class="field-error" id="nameError">Please enter a valid full name (min 3 characters).</span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="regEmail"><i class="fa-solid fa-envelope"></i> Email Address *</label>
+                <input type="email" id="regEmail" name="email" placeholder="e.g. rahul@example.com" required>
+                <span class="field-error" id="emailError">Please enter a valid email address.</span>
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="form-group">
+                <label for="regPhone"><i class="fa-solid fa-phone"></i> Mobile / WhatsApp *</label>
+                <input type="tel" id="regPhone" name="phone" placeholder="e.g. 9876543210 (10 digits)" required>
+                <span class="field-error" id="phoneError">Please enter a valid 10-digit mobile number.</span>
+              </div>
+
+              <!-- College / Institution -->
+              <div class="form-group">
+                <label for="regCollege"><i class="fa-solid fa-building-columns"></i> College / University *</label>
+                <input type="text" id="regCollege" name="college" placeholder="e.g. Mahaguru Institute of Technology" required>
+                <span class="field-error" id="collegeError">Please enter your institution name.</span>
+              </div>
+
+              <!-- Team Specific: Team Name (Shown when team/sports active) -->
+              <div class="form-group team-only-field" id="teamNameGroup" style="display: none;">
+                <label for="regTeamName"><i class="fa-solid fa-shield"></i> Official Team Name *</label>
+                <input type="text" id="regTeamName" name="teamName" placeholder="e.g. MIT Cyber Ninjas / Red Strikers">
+                <span class="field-error" id="teamNameError">Please enter your team's squad name.</span>
+              </div>
+
+              <!-- Event Selection Dropdown -->
+              <div class="form-group">
+                <label for="regEventSelect"><i class="fa-solid fa-calendar-check"></i> Select Event / Category *</label>
+                <select id="regEventSelect" name="eventSelect" required>
+                  <option value="" disabled selected>-- Choose an Event / Workshop --</option>
+                  <!-- Injected via JS based on tab selection -->
+                </select>
+                <span class="field-error" id="eventSelectError">Please select an event.</span>
+              </div>
+
+              <!-- Team Members Count (Shown when team/sports active) -->
+              <div class="form-group team-only-field" id="teamSizeGroup" style="display: none;">
+                <label for="regTeamSize"><i class="fa-solid fa-people-group"></i> Total Squad Members *</label>
+                <input type="number" id="regTeamSize" name="teamSize" min="2" max="25" placeholder="e.g. 4">
+                <span class="field-error" id="teamSizeError">Please enter number of members.</span>
+              </div>
+
+              <!-- Accommodation Requirement -->
+              <div class="form-group">
+                <label for="regAccom"><i class="fa-solid fa-bed"></i> Campus Accommodation Needed?</label>
+                <select id="regAccom" name="accommodation">
+                  <option value="no">No, Local Attendee</option>
+                  <option value="yes_male">Yes, Male Hostel (₹300/night)</option>
+                  <option value="yes_female">Yes, Female Hostel (₹300/night)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Additional Notes / Team Members List -->
+            <div class="form-group full-width team-only-field" id="teamListGroup" style="display: none;">
+              <label for="regTeamMembers"><i class="fa-solid fa-list-ol"></i> Team Member Names & Contact (One per line)</label>
+              <textarea id="regTeamMembers" rows="3" placeholder="1. Member Name (Phone, Roll No)&#10;2. Member Name (Phone, Roll No)"></textarea>
+            </div>
+
+            <!-- Pass Summary Box -->
+            <div class="pass-summary-box">
+              <div class="summary-left">
+                <div class="summary-tag">FESTIVAL ACCESS PASS</div>
+                <h4 id="passSummaryTitle">All-Access Student Participant Badge</h4>
+                <p><i class="fa-solid fa-circle-check text-green"></i> Includes Access to Campus Workshops, Auto Expo, and Pro Night Concert</p>
+              </div>
+              <div class="summary-right">
+                <div class="fee-label">Registration Fee</div>
+                <div class="fee-amount" id="feeDisplay">FREE / SPONSORED</div>
+                <span class="fee-subtext">* College ID verification required at check-in</span>
+              </div>
+            </div>
+
+            <!-- Checkbox Terms -->
+            <div class="form-group checkbox-group">
+              <label class="custom-checkbox-container">
+                <input type="checkbox" id="regTerms" required>
+                <span class="checkmark"></span>
+                <span class="terms-label">I agree to abide by the festival rules and code of conduct set by Mahaguru Institute of Technology.</span>
+              </label>
+              <span class="field-error" id="termsError">You must accept the festival rules.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-lg glow-btn" id="submitRegBtn">
+                <i class="fa-solid fa-qrcode"></i>
+                <span>Complete Registration & Generate E-Pass</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. VENUE, MAP & CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-location-dot"></i> CAMPUS DESTINATION</span>
+          <h2 class="section-title">Venue & <span class="gradient-text">Contact Information</span></h2>
+          <p class="section-subtitle">
+            Need directions, transport logistics, or event inquiries? Our student conveners and faculty team are standing by.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Venue Details Card -->
+          <div class="venue-info-card">
+            <div class="venue-card-header">
+              <div class="mit-crest">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <h3>Mahaguru Institute of Technology</h3>
+                <span class="accreditation-tag">Approved by AICTE • Affiliated Institution</span>
+              </div>
+            </div>
+
+            <div class="venue-details-list">
+              <div class="venue-item">
+                <i class="fa-solid fa-map-pin"></i>
+                <div>
+                  <strong>Campus Address</strong>
+                  <p>Mahaguru Institute of Technology (MIT Campus), Mavelikkara, Alappuzha District, Kerala, India - 690547</p>
+                </div>
+              </div>
+
+              <div class="venue-item">
+                <i class="fa-solid fa-plane-departure"></i>
+                <div>
+                  <strong>Nearest Airport</strong>
+                  <p>Cochin International Airport (COK) / Trivandrum Airport (TRV) — Festival shuttle pickup points available.</p>
+                </div>
+              </div>
+
+              <div class="venue-item">
+                <i class="fa-solid fa-train"></i>
+                <div>
+                  <strong>Nearest Railway Stations</strong>
+                  <p>Mavelikkara (MVLK) & Kayamkulam Junction (KYJ) — 15 mins by campus bus / taxi.</p>
+                </div>
+              </div>
+
+              <div class="venue-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                  <strong>24/7 Fest Helpdesk & WhatsApp</strong>
+                  <p><a href="tel:+919876543210">+91 98765 43210</a> / <a href="tel:+919876543211">+91 98765 43211</a></p>
+                </div>
+              </div>
+
+              <div class="venue-item">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <div>
+                  <strong>Official Email Inquiries</strong>
+                  <p><a href="mailto:ignitev7@mahagurutech.edu">ignitev7@mahagurutech.edu</a> / <a href="mailto:convenor.ignite@mahaguru.ac.in">convenor.ignite@mahaguru.ac.in</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Coordinators Directory -->
+            <div class="coordinators-strip">
+              <h4>Key Festival Conveners:</h4>
+              <div class="coord-chips">
+                <div class="coord-chip">
+                  <span class="coord-role">Staff Convener:</span>
+                  <span class="coord-name">Dr. Rajesh V. (+91 94471 00001)</span>
+                </div>
+                <div class="coord-chip">
+                  <span class="coord-role">Student Chairman:</span>
+                  <span class="coord-name">Arun Kumar S. (+91 98472 00002)</span>
+                </div>
+                <div class="coord-chip">
+                  <span class="coord-role">Sports Secretary:</span>
+                  <span class="coord-name">Jithin Joy (+91 97463 00003)</span>
+                </div>
+                <div class="coord-chip">
+                  <span class="coord-role">Tech Secretary:</span>
+                  <span class="coord-name">Ananya Krishna (+91 96454 00004)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Map / Campus Visualization & Inquiry Form -->
+          <div class="contact-side-column">
+            <!-- Simulated Campus High-Tech Map -->
+            <div class="interactive-map-frame">
+              <div class="map-overlay-banner">
+                <span class="map-pulse"></span>
+                <span>MIT HIGH-TECH CAMPUS RADAR</span>
+              </div>
+              <iframe 
+                title="Mahaguru Institute of Technology Location Map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.581977797825!2d76.5416!3d9.2558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061d4965ef2321%3A0xb363d3fbbe325c34!2sMahaguru%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="260" 
+                style="border:0; border-radius: 12px; filter: invert(90%) hue-rotate(180deg) contrast(110%);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <!-- Quick Inquiry Box -->
+            <div class="inquiry-form-card">
+              <h4><i class="fa-solid fa-paper-plane"></i> Quick Message to Fest Desk</h4>
+              <form id="quickContactForm">
+                <div class="inquiry-inputs-row">
+                  <input type="text" id="inqName" placeholder="Your Name" required>
+                  <input type="email" id="inqEmail" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="inqSubject" placeholder="Subject (e.g. Bus Routes / Band Registration)" required>
+                <textarea id="inqMessage" rows="3" placeholder="Write your question here..." required></textarea>
+                <button type="submit" class="btn btn-outline-glow btn-block btn-sm">
+                  <i class="fa-solid fa-paper-plane"></i> Send Inquiries
+                </button>
+                <div class="inq-success-msg" id="inqSuccessMsg" style="display: none;">
+                  <i class="fa-solid fa-circle-check"></i> Thanks! Our fest committee will reply shortly.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-top-row">
+        <div class="footer-brand-column">
+          <div class="brand-logo footer-logo">
+            <div class="logo-symbol">
+              <span class="flame-core"></span>
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <div class="logo-text">
+              <span class="logo-title">IGNITE <span class="v-accent">V7</span></span>
+              <span class="logo-sub">MAHAGURU INSTITUTE OF TECHNOLOGY</span>
+            </div>
+          </div>
+          <p class="footer-tagline-text">
+            “Ignite the Future. Unleash the Energy.”
+          </p>
+          <p class="footer-slogan">
+            <strong>“One Campus. Infinite Energy. IGNITE V7.”</strong>
+          </p>
+          
+          <div class="social-links-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-nav-column">
+          <h5>Festival Zones</h5>
+          <ul>
+            <li><a href="#proshow">ProShow & Pro Night</a></li>
+            <li><a href="#autoexpo">Auto Expo Pavilion</a></li>
+            <li><a href="#techzone">Workshops & Hackathon</a></li>
+            <li><a href="#cultural">Fashion & Street Dance</a></li>
+            <li><a href="#sports">Ignite Sports Arena</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-column">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#events">All 45+ Events</a></li>
+            <li><a href="#schedule">Full Festival Schedule</a></li>
+            <li><a href="#registration">Register Participant</a></li>
+            <li><a href="#gallery">Photo & Video Gallery</a></li>
+            <li><a href="#sponsors">Partners & Sponsors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-column">
+          <h5>Festival Live Updates</h5>
+          <p>Get event notifications, schedule changes, and celebrity arrival alerts directly.</p>
+          <form class="footer-newsletter-form" id="newsletterForm">
+            <input type="email" id="newsEmail" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary btn-sm glow-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+          <span class="newsletter-success" id="newsSuccess" style="display: none;">
+            <i class="fa-solid fa-check"></i> You are subscribed for IGNITE alerts!
+          </span>
+          <div class="emergency-contacts">
+            <small><i class="fa-solid fa-phone-volume"></i> Emergency Helpline: +91 98765 43210</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="copyright">
+          &copy; 2026 <strong>Mahaguru Institute of Technology (MIT)</strong>. All Rights Reserved. IGNITE V7 Annual Techno-Cultural Fest.
+        </div>
+        <div class="footer-badges">
+          <span class="meta-tag">HTML5 • CSS3 • Vanilla JS</span>
+          <span class="meta-tag">Fast & Responsive</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- 1. EVENT DETAIL QUICK-VIEW MODAL -->
+  <div class="modal-backdrop" id="eventDetailModal">
+    <div class="modal-card modal-event-detail">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <div class="modal-event-grid">
+        <div class="modal-event-visual">
+          <img src="" alt="Event Visual" id="modalEventImg">
+          <div class="modal-badge-group">
+            <span class="modal-cat-badge" id="modalEventCat">CATEGORY</span>
+            <span class="modal-prize-badge" id="modalEventPrize">₹0</span>
+          </div>
+        </div>
+        <div class="modal-event-info">
+          <h3 id="modalEventTitle">Event Title</h3>
+          <p class="modal-desc" id="modalEventDesc">Detailed description here...</p>
+          
+          <div class="modal-meta-grid">
+            <div class="modal-meta-box">
+              <i class="fa-regular fa-calendar"></i>
+              <div>
+                <strong>Date & Time</strong>
+                <span id="modalEventDate">Day 1</span>
+              </div>
+            </div>
+            <div class="modal-meta-box">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Venue</strong>
+                <span id="modalEventVenue">Campus Arena</span>
+              </div>
+            </div>
+            <div class="modal-meta-box">
+              <i class="fa-solid fa-users"></i>
+              <div>
+                <strong>Team Requirement</strong>
+                <span id="modalEventTeam">Solo / Team</span>
+              </div>
+            </div>
+            <div class="modal-meta-box">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Student Coordinator</strong>
+                <span id="modalEventContact">Fest Desk</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-rules-box">
+            <h4><i class="fa-solid fa-list-check"></i> Competition Guidelines:</h4>
+            <ul id="modalRulesList">
+              <li>Valid college identification mandatory for all entrants.</li>
+              <li>Reporting 30 minutes prior to scheduled slot at designated venue.</li>
+              <li>Decision of the judges and technical coordinators shall be final.</li>
+            </ul>
+          </div>
+
+          <div class="modal-actions-row">
+            <button class="btn btn-primary glow-btn btn-block" id="modalRegisterBtn">
+              <i class="fa-solid fa-ticket"></i>
+              <span>Register for this Event Now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. TEASER VIDEO MODAL -->
+  <div class="modal-backdrop" id="teaserModal">
+    <div class="modal-card modal-teaser-card">
+      <button class="modal-close-btn" id="teaserCloseBtn">&times;</button>
+      <div class="teaser-frame-wrap">
+        <div class="teaser-custom-player">
+          <div class="teaser-ambient-glow"></div>
+          <div class="teaser-poster-content">
+            <div class="teaser-brand">
+              <i class="fa-solid fa-fire text-neon-orange fa-3x"></i>
+              <h2>IGNITE V7 FESTIVAL TEASER</h2>
+              <p>“One Campus. Infinite Energy.”</p>
+            </div>
+            <div class="teaser-video-simulation">
+              <div class="video-wireframe-wave">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p class="sim-notice"><i class="fa-solid fa-clapperboard"></i> Cinematic Festival Teaser Reel</p>
+              <div class="teaser-stats-reel">
+                <span><i class="fa-solid fa-film"></i> 4K Ultra HD</span>
+                <span><i class="fa-solid fa-volume-high"></i> Dolby Atmos Sound</span>
+                <span><i class="fa-solid fa-location-arrow"></i> Mahaguru Institute of Tech</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. VERIFIED DIGITAL PASS MODAL (GENERATED ON FORM SUBMIT) -->
+  <div class="modal-backdrop" id="ticketModal">
+    <div class="modal-card modal-ticket-card">
+      <button class="modal-close-btn" id="ticketCloseBtn">&times;</button>
+      <div class="ticket-wrapper" id="ticketPrintArea">
+        <div class="ticket-header">
+          <div class="ticket-logo">
+            <i class="fa-solid fa-fire text-neon-orange"></i>
+            <div>
+              <h3>IGNITE V7</h3>
+              <span>MIT MAHAGURU FESTIVAL</span>
+            </div>
+          </div>
+          <div class="ticket-badge-pill">
+            <i class="fa-solid fa-circle-check"></i> VERIFIED E-PASS
+          </div>
+        </div>
+
+        <div class="ticket-main-grid">
+          <div class="ticket-attendee-details">
+            <span class="ticket-sub">PASS HOLDER</span>
+            <h2 id="ticketAttendeeName">Rahul Sharma</h2>
+            
+            <div class="ticket-meta-fields">
+              <div class="t-field">
+                <span class="lbl">EVENT / CATEGORY</span>
+                <strong id="ticketEventName">Generative AI Workshop</strong>
+              </div>
+              <div class="t-field">
+                <span class="lbl">INSTITUTION</span>
+                <strong id="ticketCollegeName">Mahaguru Institute of Technology</strong>
+              </div>
+              <div class="t-field">
+                <span class="lbl">REGISTRATION ID</span>
+                <strong id="ticketRegId" class="text-neon-cyan">IGN7-849204-MIT</strong>
+              </div>
+              <div class="t-field">
+                <span class="lbl">DATE ISSUED</span>
+                <strong id="ticketDateIssued">Day 1-3 All Access</strong>
+              </div>
+            </div>
+
+            <div class="ticket-hologram-seal">
+              <i class="fa-solid fa-certificate"></i> OFFICIAL DIGITAL ACCESS SEAL • MAHAGURU CAMPUS
+            </div>
+          </div>
+
+          <!-- QR Code Side -->
+          <div class="ticket-qr-side">
+            <div class="qr-mockup-frame">
+              <!-- SVG Procedural QR Code Mockup -->
+              <svg class="qr-svg" viewBox="0 0 100 100" width="130" height="130">
+                <rect width="100" height="100" fill="#000"/>
+                <!-- Corner 1 -->
+                <rect x="5" y="5" width="25" height="25" fill="#fff"/>
+                <rect x="9" y="9" width="17" height="17" fill="#000"/>
+                <rect x="13" y="13" width="9" height="9" fill="#00f0ff"/>
+                <!-- Corner 2 -->
+                <rect x="70" y="5" width="25" height="25" fill="#fff"/>
+                <rect x="74" y="9" width="17" height="17" fill="#000"/>
+                <rect x="78" y="13" width="9" height="9" fill="#00f0ff"/>
+                <!-- Corner 3 -->
+                <rect x="5" y="70" width="25" height="25" fill="#fff"/>
+                <rect x="9" y="74" width="17" height="17" fill="#000"/>
+                <rect x="13" y="78" width="9" height="9" fill="#00f0ff"/>
+                <!-- Random Matrix Data Blocks -->
+                <rect x="35" y="10" width="5" height="10" fill="#fff"/>
+                <rect x="45" y="5" width="15" height="5" fill="#ff5722"/>
+                <rect x="40" y="20" width="10" height="10" fill="#fff"/>
+                <rect x="55" y="15" width="8" height="8" fill="#fff"/>
+                <rect x="10" y="35" width="15" height="5" fill="#fff"/>
+                <rect x="15" y="45" width="8" height="12" fill="#fff"/>
+                <rect x="35" y="35" width="25" height="25" fill="#ff1e42"/>
+                <rect x="42" y="42" width="11" height="11" fill="#fff"/>
+                <rect x="68" y="35" width="8" height="8" fill="#fff"/>
+                <rect x="80" y="40" width="15" height="10" fill="#fff"/>
+                <rect x="35" y="68" width="10" height="12" fill="#fff"/>
+                <rect x="50" y="70" width="15" height="8" fill="#00f0ff"/>
+                <rect x="70" y="65" width="12" height="12" fill="#fff"/>
+                <rect x="85" y="70" width="10" height="20" fill="#ff5722"/>
+                <rect x="50" y="85" width="20" height="10" fill="#fff"/>
+              </svg>
+            </div>
+            <span class="qr-label">SCAN AT ENTRANCE</span>
+            <div class="ticket-barcode">
+              ||||| | |||| ||| |||||| || ||| |||||||
+            </div>
+          </div>
+        </div>
+
+        <div class="ticket-footer-strip">
+          <span><i class="fa-solid fa-triangle-exclamation"></i> Non-transferable. Present college student photo ID at main entry gates.</span>
+          <span>Mahaguru Institute of Technology</span>
+        </div>
+      </div>
+
+      <div class="ticket-actions-bar">
+        <button class="btn btn-primary glow-btn" id="printTicketBtn">
+          <i class="fa-solid fa-print"></i> Print / Save Pass
+        </button>
+        <button class="btn btn-secondary" id="closeTicketModalBtn">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. OFFICIAL EVENT POSTER MODAL -->
+  <div class="modal-backdrop" id="eventPosterModal">
+    <div class="modal-card modal-poster-card">
+      <button class="modal-close-btn" id="posterCloseBtn" aria-label="Close Poster">&times;</button>
+      
+      <!-- Poster Printable Canvas / Wrapper -->
+      <div class="poster-flyer-wrapper" id="posterFlyerWrapper">
+        <div class="poster-cyber-border"></div>
+
+        <!-- Poster Header Banner -->
+        <div class="poster-header-banner">
+          <div class="poster-college-row">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>MAHAGURU INSTITUTE OF TECHNOLOGY (MIT)</span>
+          </div>
+          <div class="poster-fest-badge">
+            <span class="p-fest-title">IGNITE <span class="v-accent">V7</span></span>
+            <span class="p-fest-sub">ANNUAL TECHNO-CULTURAL FESTIVAL</span>
+          </div>
+        </div>
+
+        <!-- Poster Category Chip -->
+        <div class="poster-category-strip">
+          <span id="posterCategoryName">ENTERTAINMENT & STAGE</span>
+        </div>
+
+        <!-- Big Poster Artwork Image with Overlay Gradient -->
+        <div class="poster-visual-frame">
+          <img src="" id="posterImg" alt="Official Event Poster Visual">
+          <div class="poster-visual-glare"></div>
+          <div class="poster-prize-ribbon" id="posterPrizeRibbon">
+            <i class="fa-solid fa-trophy text-gold"></i>
+            <span id="posterPrizeText">₹50,000 CASH PRIZE</span>
+          </div>
+        </div>
+
+        <!-- Poster Main Typography -->
+        <div class="poster-body">
+          <h2 class="poster-title" id="posterTitle">VOGUE ILLUMINATE FASHION SHOW</h2>
+          <p class="poster-tagline" id="posterTagline">“The Ultimate High-Couture Runway Battle”</p>
+
+          <!-- Poster Meta Details Grid -->
+          <div class="poster-meta-grid">
+            <div class="p-meta-cell">
+              <span class="p-meta-lbl"><i class="fa-regular fa-calendar"></i> DATE & TIME</span>
+              <strong id="posterDate">Day 2 • 6:30 PM</strong>
+            </div>
+            <div class="p-meta-cell">
+              <span class="p-meta-lbl"><i class="fa-solid fa-location-dot"></i> VENUE</span>
+              <strong id="posterVenue">Main Auditorium Stage</strong>
+            </div>
+            <div class="p-meta-cell">
+              <span class="p-meta-lbl"><i class="fa-solid fa-ticket"></i> ENTRY / TICKET</span>
+              <strong id="posterFee" class="text-neon-orange">₹599 Pass / Free</strong>
+            </div>
+            <div class="p-meta-cell">
+              <span class="p-meta-lbl"><i class="fa-solid fa-users"></i> SQUAD SIZE</span>
+              <strong id="posterSquad">Solo / Team</strong>
+            </div>
+          </div>
+
+          <!-- Bottom Poster Footer with QR Code & Coordinators -->
+          <div class="poster-footer-row">
+            <div class="poster-contacts">
+              <div class="p-contact-title"><i class="fa-solid fa-phone"></i> EVENT CONVENER:</div>
+              <strong id="posterContact">Arun Kumar (+91 98472 00002)</strong>
+              <small>Mahaguru Institute of Technology, Mavelikkara</small>
+            </div>
+            <div class="poster-qr-block">
+              <!-- Procedural SVG QR Code for Poster -->
+              <svg class="qr-svg-mini" viewBox="0 0 100 100" width="65" height="65">
+                <rect width="100" height="100" fill="#000"/>
+                <rect x="5" y="5" width="25" height="25" fill="#fff"/>
+                <rect x="9" y="9" width="17" height="17" fill="#000"/>
+                <rect x="13" y="13" width="9" height="9" fill="#ff5722"/>
+                <rect x="70" y="5" width="25" height="25" fill="#fff"/>
+                <rect x="74" y="9" width="17" height="17" fill="#000"/>
+                <rect x="78" y="13" width="9" height="9" fill="#ff5722"/>
+                <rect x="5" y="70" width="25" height="25" fill="#fff"/>
+                <rect x="9" y="74" width="17" height="17" fill="#000"/>
+                <rect x="13" y="78" width="9" height="9" fill="#ff5722"/>
+                <rect x="35" y="20" width="10" height="10" fill="#fff"/>
+                <rect x="50" y="35" width="15" height="15" fill="#00f0ff"/>
+                <rect x="35" y="65" width="20" height="10" fill="#fff"/>
+              </svg>
+              <span>SCAN TO REGISTER</span>
+            </div>
+          </div>
+
+          <div class="poster-brand-footer">
+            <span>ONE CAMPUS. INFINITE ENERGY. IGNITE V7.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Poster Action Buttons -->
+      <div class="poster-actions-row">
+        <button class="btn btn-primary glow-btn" id="posterDownloadBtn">
+          <i class="fa-solid fa-download"></i> Save / Print Poster
+        </button>
+        <button class="btn btn-secondary" id="posterRegisterBtn">
+          <i class="fa-solid fa-ticket"></i> Register for Event
+        </button>
+        <button class="btn btn-outline" id="posterSwitchDetailsBtn">
+          <i class="fa-solid fa-list-check"></i> View Guidelines
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
